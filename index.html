@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <title>ImageCropApp</title>
+    <!-- for responsive width and height of app -->
+    <meta name="viewport" content="width=device-width,initial-scale=1"> 
+    <link rel="stylesheet" href="css/styles.css"> <!--for styling-->
+</head>
+<body>
+    <div class="main-capture area">
+        <main id="camera">
+            <!-- Creating canvas for animation effect of capturing the picture from webcam -->
+            <canvas id="camera-sensor"></canvas> 
+            <!-- video tag which will open camera and automatically show the live image in the section of playback area defined by playsinline tag -->
+            <video id="camera-view" autoplay playsinline></video>
+            <!-- '//:0' is used so that for no image found it should not display any icon -->
+            <img id="camera-output" src="//:0" alt="">
+            <!-- button to trigger the image capture -->
+            <button id="camera-trigger">Capture</button>
+            <!-- <button id="flip-trigger">Flip</button> -->
+            <button id="save">Save</button>
+        </main>
+    </div>
+    <script src="js/index.js"></script> <!--for functioning of image capture-->
+</body>
+</html>

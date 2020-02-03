@@ -1,0 +1,66 @@
+
+html,body{
+    margin:0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#camera,#camera-view,#camera-sensor,#camera-output{
+    position: fixed;
+    height:100%;
+    width:100%;
+    object-fit: cover; 
+    /* it will cut the image to preserve the aspect ration while resiziing the screen */
+}
+
+#camera-view,#camera-sensor,#camera-output{
+    /* These commands will flip the image captured */
+    transform: scaleX(-1);  
+    filter: FlipH;
+}
+
+button{
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+    border:none;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    position: fixed;
+    width: 25%;
+}
+#camera-trigger,#submit{
+    left:20%;
+    bottom:30px;
+}
+#save,#verify{
+    bottom: 30px;
+    right:20%;
+}
+
+
+/* This taken property will be applied after the image is captured and element will be created in javaScript */
+.taken{
+height: 100px !important;
+width: 100px !important;
+transition: all 0.5s ease-in;
+border: solid 3px white;
+box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+top: 20px;
+right: 20px;
+z-index: 2;
+}
+
+#imageCaptured
+{
+    border: 4px solid black;
+    border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:50px;
+    width: 50%;
+}
