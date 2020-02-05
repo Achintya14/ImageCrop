@@ -20,42 +20,39 @@ html,body{
     transform: scaleX(-1);  
     filter: FlipH;
 }
-
-button{
-    background-color: black;
-    color: white;
-    font-size: 16px;
-    border-radius: 30px;
-    border:none;
-    padding:10px 20px;
-    text-align: center;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+.buttons-inline {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
     position: fixed;
-    width: 25%;
     bottom: 30px;
-}
-#submit{
-    left:20%;
-}
-#verify{
-    right:20%;
-}
-#camera-trigger{
-    left:10%;
-}
-#flip-trigger{
-    left:40%;
-}
-#save{
-    left:70%;
-}
-.outer{
     width: 100%;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
 }
-.inner{
-    display: inline-block;
+.buttons-inline button{
+    padding: 10px 20px;
+    background-color: dodgerblue;
+    border: 1px solid white;
+    color: white;
+    position: relative;
 }
+.buttons-inline button:hover{
+    background-color: royalblue;
+    color: black;
+}
+/* @media only screen and (max-width: 800px){
+    .buttons-inline button{
+        margin: 10px 0;
+    }
+    .buttons-inline{
+        flex-direction: column;
+        align-items: stretch;
+    }
 
+} */
 
 
 /* This taken property will be applied after the image is captured and element will be created in javaScript */
