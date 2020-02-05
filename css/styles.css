@@ -23,7 +23,6 @@ html,body{
 .buttons-inline {
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
     position: fixed;
     bottom: 30px;
     width: 100%;
@@ -43,16 +42,27 @@ html,body{
     background-color: royalblue;
     color: black;
 }
-/* @media only screen and (max-width: 800px){
+@media only screen and (max-width: 800px){
     .buttons-inline button{
-        margin: 10px 0;
+        margin: 0 auto;
+        padding: 5px 5px;
+        background-color: dodgerblue;
+        border: 1px solid white;
+        color: white;
+        position: relative;
+        width: 100%;
+        height: 50px;
+        font-size: 20px;
     }
     .buttons-inline{
         flex-direction: column;
         align-items: stretch;
+        position: fixed;
+        bottom: 30px;
+        width: 100%;
     }
 
-} */
+} 
 
 
 /* This taken property will be applied after the image is captured and element will be created in javaScript */
