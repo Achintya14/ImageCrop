@@ -20,15 +20,22 @@ const  cameraView = document.querySelector("#camera-view"),
 function cameraStart() {
     console.log('camera Stream Started');
     console.log(constraints);
+    //displaying camera devices
     navigator.mediaDevices.enumerateDevices().then(function(deviceInfo){
         deviceInfo.forEach(function(device){
-            alert(device.kind+": "+device.label+": "+" id = "+device.deviceId);
+            alert(device.label+": "+" id = "+device.deviceId)
         });
     }).catch(function(error){
         console.error(error);
     })
+
+
+    
+   
+    //streaming camera 
     navigator.mediaDevices.getUserMedia(constraints).then(function(stream){
-        track = stream.getTracks()[id];
+        console.log(stream.getTracks())
+        track = stream.getTracks()[0];
         cameraView.srcObject = stream;
     }).catch(function(error){
         console.error("Oops. Something is broken.",error);
