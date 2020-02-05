@@ -16,6 +16,8 @@ var handleOnLoadWindow = function () {
         var foundCamera = false;
         navigator.mediaDevices.enumerateDevices().then(function(deviceInfo){
             deviceInfo.forEach(function(device){
+                var temp = device.label+"||"+useFrontCamera;
+                alert(temp)
                 if ((!foundCamera) && (((device.label.indexOf("front") > -1) && useFrontCamera) || ((device.label.indexOf("back") > -1) && !useFrontCamera))){
                     
                     var constraints = { 
