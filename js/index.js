@@ -1,4 +1,4 @@
-var currentFacingMode = 'user';
+var currentFacingMode = 'environment';
 
 var constraints = { 
                     video: { facingMode:currentFacingMode },
