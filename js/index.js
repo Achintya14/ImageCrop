@@ -21,6 +21,7 @@ var handleOnLoadWindow = function () {
             deviceInfo.forEach(function(device){
                 alert(foundCamera);
                 alert(device.label);
+                alert(useFrontCamera);
                 if (
                     (!foundCamera) && 
                     (
