@@ -12,12 +12,10 @@ const  cameraView = document.querySelector("#camera-view"),
 //access the device camera and steam to cameraView
 var cameraStart = function () {
     alert("Trying to detect camera");
-
     var foundCamera = false;
     navigator.mediaDevices.enumerateDevices().then(function(deviceInfo){
         deviceInfo.forEach(function(device){
             if ((!foundCamera) && (((device.label.indexOf("front") > -1) && useFrontCamera) || ((device.label.indexOf("back") > -1) && !useFrontCamera))){
-                alert(device.label+": "+" id = "+device.deviceId);
                 
                 var constraints = { 
                     video: { deviceID: device.deviceId },
