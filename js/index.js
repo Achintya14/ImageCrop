@@ -18,6 +18,8 @@ const  cameraView = document.querySelector("#camera-view"),
 
 //access the device camera and steam to cameraView
 function cameraStart() {
+    console.log('camera Stream Started');
+    console.log(constraints["video"]);
     navigator.mediaDevices.getUserMedia(constraints).then(function(stream){
         track = stream.getTracks()[0];
         cameraView.srcObject = stream;
@@ -49,6 +51,7 @@ flipTrigger.onclick = function(){
         video:  { facingMode: currentFacingMode },
         audio: false
     }
+    console.log(constraints);
     cameraStart();
 }
 

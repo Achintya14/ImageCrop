@@ -4,6 +4,7 @@ html,body{
     padding: 0;
     height: 100%;
     width: 100%;
+    background-image:linear-gradient(to bottom right,#abccff,#99bbff);
 }
 
 #camera,#camera-view,#camera-sensor,#camera-output{
@@ -26,20 +27,35 @@ button{
     font-size: 16px;
     border-radius: 30px;
     border:none;
-    padding: 15px 20px;
+    padding:10px 20px;
     text-align: center;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
     position: fixed;
-    width: 25%;
-}
-#camera-trigger,#submit{
-    left:20%;
-    bottom:30px;
-}
-#save,#verify{
+    width: 20%;
     bottom: 30px;
+}
+#submit{
+    left:20%;
+}
+#verify{
     right:20%;
 }
+#camera-trigger{
+    left:10%;
+}
+#flip-trigger{
+    left:40%;
+}
+#save{
+    left:70%;
+}
+.outer{
+    width: 100%;
+}
+.inner{
+    display: inline-block;
+}
+
 
 
 /* This taken property will be applied after the image is captured and element will be created in javaScript */
