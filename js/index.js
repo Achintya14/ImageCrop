@@ -18,8 +18,19 @@ var handleOnLoadWindow = function () {
             deviceInfo.forEach(function(device){
                 var temp = device.label+"||"+useFrontCamera;
                 alert(temp)
-                if ((!foundCamera) && (((device.label.indexOf("front") > -1) && useFrontCamera) || ((device.label.indexOf("back") > -1) && !useFrontCamera))){
-                    
+                alert(foundCamera);
+                alert(device.label.indexOf("front"));
+                alert(device.label.indexOf("back"));
+                if (
+                    (!foundCamera) && 
+                    (
+                        (
+                            (device.label.indexOf("front") > -1) && useFrontCamera
+                        ) || (
+                            (device.label.indexOf("back") > -1) && !useFrontCamera
+                        )
+                    )
+                ){   
                     var constraints = { 
                         video: { deviceID: device.deviceId },
                         audio: false
