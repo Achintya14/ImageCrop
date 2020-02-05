@@ -1,4 +1,4 @@
-var currentFacingMode = 'environment';
+var currentFacingMode = 'user';
 
 var constraints = { 
                     video: { facingMode:currentFacingMode },
@@ -12,7 +12,7 @@ const  cameraView = document.querySelector("#camera-view"),
        cameraOutput = document.querySelector("#camera-output"),
        cameraSensor = document.querySelector("#camera-sensor"),
        captureTrigger = document.querySelector("#camera-trigger"),
-    //    flipTrigger = document.querySelector("#flip-trigger"),
+       flipTrigger = document.querySelector("#flip-trigger"),
        saveTrigger = document.querySelector("#save");
 
 
@@ -41,6 +41,15 @@ saveTrigger.onclick = function(){
     console.log('save Trigger clicked.');
     localStorage.setItem("imgCanvas",cameraOutput.src);
     window.location.href='cropImage.html';
+}
+
+flipTrigger.onclick = function(){
+    currentFacingMode = (currentFacingMode=='user')?'environment':'user';
+    constraints = {
+        video:  { facingMode: currentFacingMode },
+        audio: false
+    }
+    cameraStart();
 }
 
 window.addEventListener("load",cameraStart,true);
