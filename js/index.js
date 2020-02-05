@@ -1,5 +1,5 @@
 var currentFacingMode = 'environment';
-
+var id=0;
 var constraints = { 
                     video: { facingMode:currentFacingMode },
                     audio: false
@@ -28,7 +28,7 @@ function cameraStart() {
         console.error(error);
     })
     navigator.mediaDevices.getUserMedia(constraints).then(function(stream){
-        track = stream.getTracks()[0];
+        track = stream.getTracks()[id];
         cameraView.srcObject = stream;
     }).catch(function(error){
         console.error("Oops. Something is broken.",error);
@@ -59,6 +59,7 @@ flipTrigger.onclick = function(){
         audio: false
     }
     console.log(constraints);
+    id=(id==0)?1:0;
     cameraStart();
 }
 
