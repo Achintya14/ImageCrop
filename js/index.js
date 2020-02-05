@@ -17,7 +17,7 @@ var handleOnLoadWindow = function () {
         navigator.mediaDevices.enumerateDevices().then(function(deviceInfo){
             deviceInfo.forEach(function(device){
                 var temp = device.label+"||"+useFrontCamera;
-                alert(temp)
+                alert(temp);
                 alert(foundCamera);
                 alert(device.label.indexOf("front"));
                 alert(device.label.indexOf("back"));
@@ -46,25 +46,25 @@ var handleOnLoadWindow = function () {
                     foundCamera = true;
                     alert("camera found");
                 }
-                if (!foundCamera) {
-                    alert("no camera found - resorting to default");
-                    var constraints = { 
-                        video: {},
-                        audio: false
-                    };
-                    navigator.mediaDevices.getUserMedia(constraints).then(function(stream){
-                        console.log(stream.getTracks())
-                        track = stream.getTracks()[0];
-                        cameraView.srcObject = stream;
-                    }).catch(function(error){
-                        console.error("Oops. Something is broken.",error);
-                    });
-                    foundCamera = true;
-                }
             });
         }).catch(function(error){
             console.error(error);
-        })
+        });
+        if (!foundCamera) {
+            alert("no camera found - resorting to default");
+            var constraints = { 
+                video: {},
+                audio: false
+            };
+            navigator.mediaDevices.getUserMedia(constraints).then(function(stream){
+                console.log(stream.getTracks())
+                track = stream.getTracks()[0];
+                cameraView.srcObject = stream;
+            }).catch(function(error){
+                console.error("Oops. Something is broken.",error);
+            });
+            foundCamera = true;
+        }
     };
     
     captureTrigger.onclick = function(){
