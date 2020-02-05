@@ -1,4 +1,4 @@
-var currentFacingMode = 'user';
+var currentFacingMode = 'environment';
 
 var constraints = { 
                     video: { facingMode:currentFacingMode },
@@ -12,11 +12,11 @@ const  cameraView = document.querySelector("#camera-view"),
        cameraOutput = document.querySelector("#camera-output"),
        cameraSensor = document.querySelector("#camera-sensor"),
        captureTrigger = document.querySelector("#camera-trigger"),
-    //    flipTrigger = document.querySelector("#flip-trigger");
-    saveTrigger = document.querySelector("#save");
+    //    flipTrigger = document.querySelector("#flip-trigger"),
+       saveTrigger = document.querySelector("#save");
 
 
-//access the device camera and stream to cameraView
+//access the device camera and steam to cameraView
 function cameraStart() {
     navigator.mediaDevices.getUserMedia(constraints).then(function(stream){
         track = stream.getTracks()[0];
